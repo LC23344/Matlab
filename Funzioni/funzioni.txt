@@ -1,6 +1,12 @@
 // plustest.m
 
-function [c] = plustest(a, b)
+function [c, d] = plustest(a, b)
+
+if (a + b) > 5
+    d = true
+else 
+    d = false
+end
 
 c = a + b;
 
