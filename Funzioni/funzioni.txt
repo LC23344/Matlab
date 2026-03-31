@@ -1,0 +1,8 @@
+function [c] = plustest(a, b)
+
+c = a + b;
+
+
+// Workspace
+
+plustest(2, 6)
