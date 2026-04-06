@@ -1,0 +1,27 @@
+X = ones(3) / zeros(3)
+crea matrice 3x3 con solo 1/0
+
+X = [3 5 7; 3 2 1; 8 9 7]  // opzioni mettere "," tra elementi
+
+     3     5     7
+     3     2     1
+     8     9     7
+
+eig(X)
+autovalori di X
+
+diag(X)
+diagonali di X
+
+eye(4) 
+matrice identità 4x4
+
+triu/tril(X)
+genera la matrice superiore/inferiore di X
+
+norm(X)
+norma di X
+
+det(X)
+determinata di X
+
