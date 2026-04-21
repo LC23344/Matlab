@@ -1,0 +1,14 @@
+function [zero, it] = Newton_Residuo(f, x0, tol, fprimo, it)
+    if(f(x0) == 0)
+        zero = x0;
+        return;
+    end
+    x_new = x0 - f(x0)/fprimo(x0);
+    if(abs(f(x1)) < tol)
+        zero = x1;
+        return;
+    else
+        it = it + 1;
+        [zero, it] = Newton_Residuo(f, x_new, tol, fprimo, it);
+    end
+end

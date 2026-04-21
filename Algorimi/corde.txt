@@ -1,0 +1,48 @@
+function [zero, n_it] = corde(f, a, b, x0, tol, n_it_max)
+
+n_it = 0;
+x_prev = x0;
+
+q = (f(b) - f(a)) / (b - a);
+
+while n_it < n_it_max && abs(f(x_prev)) > tol
+    x_new = x_prev - f(x_prev) / q;
+
+    x_prev = x_new;
+    n_it = n_it + 1;
+end
+
+zero = x_prev;
+
+end
+
+//////////////
+corde con grafico errore
+
+
+
+function [zero] = parz20251(f, a, b, x0, tol)
+
+x_prev = x0;
+x_vals = x_prev;
+
+while abs(f(x_prev)) > tol 
+    x_new = x_prev - f(x_prev) * ((b-a) / (f(b) - f(a)));
+    x_vals = [x_vals, x_new];  % salva iterato
+    x_prev = x_new;
+end
+
+err = abs(x_vals - fzero(f, x0));
+semilogy(err, '-o')
+xlabel('Iterazioni')
+ylabel('Errore')
+title('Andamento errore')
+grid on
+
+zero = x_prev;
+
+end
+
+
+
+forse meglio grafico esterno

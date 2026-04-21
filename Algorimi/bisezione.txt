@@ -1,0 +1,19 @@
+function [zero] = bisezione(f, a, b, tol, max_it)
+
+if (f(a)*f(b) > 0)
+    error('function must have different signs')
+end
+
+for i = 1:max_it
+    x = (a+b) / 2;
+    if (abs(a-b) < tol)
+        zero = x;
+        return;
+    elseif (f(x) * f(a) < 0)
+        b = x;
+    else
+        a = x;
+    end
+zero = x;
+end
+

@@ -7,5 +7,8 @@ somma di tutti gli elementi di v
 norm(v)
 norma di v
 
+v = ones/zeros(1, 8)
+vettore con 8 zeri o uni
+
 
 
